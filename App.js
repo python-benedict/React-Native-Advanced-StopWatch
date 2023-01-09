@@ -37,9 +37,9 @@ function ButtonRow({children}){
 
 function Lap({number, interval}){
   return(
-    <View>
-      <Text>Lap {number}</Text>
-      <Text>{interval}</Text>
+    <View style={styles.lap}>
+      <Text style={styles.lapText}>Lap {number}</Text>
+      <Text style={styles.lapText}>{interval}</Text>
     </View>
   )
 }
@@ -47,9 +47,9 @@ function Lap({number, interval}){
 function LapTable({laps}){
   return(
     <ScrollView>
-      {laps.map((lap,index) =>{
+      {laps.map((lap,index) =>(
         <Lap number={index} interval={lap} />
-      })}
+        ))}
     </ScrollView>
   )
 }
@@ -63,6 +63,7 @@ export default class App extends Component {
           <RoundButton title={'Reset'} color='#FFFFFF' background={'#3D3D3D'}/>
           <RoundButton title={'Start'} color='#50D167' background={'#1B361F'}/>
         </ButtonRow>
+        <LapTable laps={DATA.laps} />
       </View>
     );
   }
@@ -104,5 +105,8 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     justifyContent: 'space-around',
     marginTop: 80,
+  },
+  lapText:{
+    color: '#ffffff',
   }
 })
