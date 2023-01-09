@@ -20,8 +20,8 @@ function Timer({ interval }){
 
 function RoundButton({title, color, background}){
   return(
-    <View>
-      
+    <View style={[ styles.button, {backgroundColor:background}]}>
+      <Text style={[styles.buttonText, {color}]}>{title}</Text>
     </View>
   )
 }
@@ -31,6 +31,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Timer interval={DATA.timer} />
+        <RoundButton title={'Start'} color='#50D167' background={'#1B361F'}/>
       </View>
     );
   }
@@ -48,6 +49,15 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: 70,
-
-  }
+  },
+  button:{
+    width:80,
+    height:80,
+    borderRadius: 40,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  buttonText:{
+    fontWeight: 'bold'
+  },
 })
