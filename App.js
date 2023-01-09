@@ -33,6 +33,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Timer interval={DATA.timer} />
+        <RoundButton title={'Start'} color='#50D167' background={'#3D3D3D'}/>
         <RoundButton title={'Start'} color='#50D167' background={'#1B361F'}/>
       </View>
     );
