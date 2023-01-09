@@ -28,13 +28,22 @@ function RoundButton({title, color, background}){
   )
 }
 
+
+function ButtonRow({children}){
+  return (
+    <View style={styles.buttonRows}>{children}</View>
+  )
+}
+
 export default class App extends Component {
   render(){
     return (
       <View style={styles.container}>
         <Timer interval={DATA.timer} />
-        <RoundButton title={'Start'} color='#50D167' background={'#3D3D3D'}/>
-        <RoundButton title={'Start'} color='#50D167' background={'#1B361F'}/>
+        <ButtonRow>
+          <RoundButton title={'Reset'} color='#FFFFFF' background={'#3D3D3D'}/>
+          <RoundButton title={'Start'} color='#50D167' background={'#1B361F'}/>
+        </ButtonRow>
       </View>
     );
   }
@@ -71,4 +80,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  buttonRows:{
+    flexDirection: 'row',
+    alignSelf: 'stretch',
+    justifyContent: 'space-around',
+    marginTop: 80,
+  }
 })
