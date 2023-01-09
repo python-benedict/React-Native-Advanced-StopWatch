@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import moment from 'moment'
 
 
@@ -41,6 +41,16 @@ function Lap({number, interval}){
       <Text>Lap {number}</Text>
       <Text>{interval}</Text>
     </View>
+  )
+}
+
+function LapTable({laps}){
+  return(
+    <ScrollView>
+      {laps.map((lap,index) =>{
+        <Lap number={index} interval={lap} />
+      })}
+    </ScrollView>
   )
 }
 
