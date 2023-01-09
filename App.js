@@ -21,7 +21,9 @@ function Timer({ interval }){
 function RoundButton({title, color, background}){
   return(
     <View style={[ styles.button, {backgroundColor:background}]}>
-      <Text style={[styles.buttonText, {color}]}>{title}</Text>
+      <View style={styles.buttonBorder}>
+        <Text style={[styles.buttonText, {color}]}>{title}</Text>
+      </View>
     </View>
   )
 }
@@ -59,5 +61,13 @@ const styles = StyleSheet.create({
   },
   buttonText:{
     fontWeight: 'bold'
+  },
+  buttonBorder:{
+    width: 76,
+    height: 76,
+    borderRadius: 38,
+    borderWidth: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 })
