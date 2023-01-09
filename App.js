@@ -35,6 +35,15 @@ function ButtonRow({children}){
   )
 }
 
+function Lap({number, interval}){
+  return(
+    <View>
+      <Text>Lap {number}</Text>
+      <Text>{interval}</Text>
+    </View>
+  )
+}
+
 export default class App extends Component {
   render(){
     return (
