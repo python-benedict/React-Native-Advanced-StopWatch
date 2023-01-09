@@ -6,11 +6,15 @@ const DATA = {
   laps : [ 231, 556, 235, 977 ],
 }
 
+function Timer({ interval }){
+  return <Text>{interval}</Text>
+}
+
 export default class App extends Component {
   render(){
     return (
       <View style={styles.container}>
-        <Text>Welcome to my advanced stopwatch app!</Text>
+        <Timer interval={DATA.timer} />
       </View>
     );
   }
