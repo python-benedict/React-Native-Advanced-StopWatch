@@ -10,7 +10,20 @@ const DATA = {
 
 function Timer({ interval }){
   const duration = moment.duration(interval)
-  return <Text style={styles.timer}>{duration.minutes()}: {duration.seconds()}: {duration.milliseconds()}</Text>
+  const centiseconds = Math.floor(duration.milliseconds() / 10)
+  return (
+    <Text style={styles.timer}>
+      {duration.minutes()}: {duration.seconds()}: { centiseconds}
+    </Text>
+  ) 
+}
+
+function RoundButton({title, color, background}){
+  return(
+    <View>
+      
+    </View>
+  )
 }
 
 export default class App extends Component {
