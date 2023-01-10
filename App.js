@@ -125,5 +125,11 @@ const styles = StyleSheet.create({
   ScrollView:{
     alignSelf: 'stretch',
     marginTop: 50,
+  },
+  fastest:{
+    color: '#4BC05F'
+  },
+  slowest:{
+    color: '#CC3531',
   }
 })
