@@ -48,7 +48,7 @@ function LapTable({laps}){
   return(
     <ScrollView>
       {laps.map((lap,index) =>(
-        <Lap number={index} interval={lap} />
+        <Lap number={laps.lenght - index} interval={lap} />
         ))}
     </ScrollView>
   )
