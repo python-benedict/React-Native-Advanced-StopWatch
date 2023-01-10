@@ -112,12 +112,14 @@ const styles = StyleSheet.create({
   },
   lapText:{
     color: '#ffffff',
-    fontSize: 18,
+    fontSize: 22,
     fontWeight: 'bold'
   },
   lap:{
     flexDirection: 'row',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    borderColor: '#151515',
+    paddingVertical: 10,
   },
   ScrollView:{
     alignSelf: 'stretch',
