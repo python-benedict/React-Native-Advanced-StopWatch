@@ -8,11 +8,11 @@ const DATA = {
   laps : [ 231, 556, 235, 977 ],
 }
 
-function Timer({ interval }){
+function Timer({ interval, style }){
   const duration = moment.duration(interval)
   const centiseconds = Math.floor(duration.milliseconds() / 10)
   return (
-    <Text style={styles.timer}>
+    <Text style={style}>
       {duration.minutes()}: {duration.seconds()}: { centiseconds}
     </Text>
   ) 
@@ -39,7 +39,7 @@ function Lap({number, interval}){
   return(
     <View style={styles.lap}>
       <Text style={styles.lapText}>Lap {number}</Text>
-      <Text style={styles.lapText}>{interval}</Text>
+      <Timer style={styles.lapText} interval={interval}/>
     </View>
   )
 }
@@ -62,7 +62,7 @@ export default class App extends Component {
   render(){
     return (
       <View style={styles.container}>
-        <Timer interval={DATA.timer} />
+        <Timer interval={DATA.timer} style={styles.timer} />
         <ButtonRow>
           <RoundButton title={'Reset'} color='#FFFFFF' background={'#3D3D3D'}/>
           <RoundButton title={'Start'} color='#50D167' background={'#1B361F'}/>
@@ -120,6 +120,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     borderColor: '#151515',
     paddingVertical: 10,
+    borderTopWidth: 2,
   },
   ScrollView:{
     alignSelf: 'stretch',
