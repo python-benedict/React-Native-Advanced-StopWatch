@@ -50,7 +50,7 @@ function LapTable({laps}){
       {laps.map((lap,index) =>(
         <Lap 
           number={laps.length - index} 
-          key={lap.length - index} 
+          key={laps.length - index} 
           interval={lap} 
         />
       ))}
