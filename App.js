@@ -46,11 +46,11 @@ function Lap({number, interval}){
 
 function LapTable({laps}){
   return(
-    <ScrollView>
+    <ScrollView style={styles.ScrollView}>
       {laps.map((lap,index) =>(
         <Lap 
-          number={laps.lenght - index} 
-          key={index} 
+          number={laps.length - index} 
+          key={lap.length - index} 
           interval={lap} 
         />
       ))}
@@ -113,5 +113,14 @@ const styles = StyleSheet.create({
   lapText:{
     color: '#ffffff',
     fontSize: 18,
+    fontWeight: 'bold'
+  },
+  lap:{
+    flexDirection: 'row',
+    justifyContent: 'space-around'
+  },
+  ScrollView:{
+    alignSelf: 'stretch',
+    marginTop: 50,
   }
 })
