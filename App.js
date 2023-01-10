@@ -35,7 +35,7 @@ function ButtonRow({children}){
   )
 }
 
-function Lap({number, interval}){
+function Lap({number, interval, fastest, slowest}){
   return(
     <View style={styles.lap}>
       <Text style={styles.lapText}>Lap {number}</Text>
