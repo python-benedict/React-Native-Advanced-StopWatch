@@ -36,8 +36,13 @@ function ButtonRow({children}){
 }
 
 function Lap({number, interval, fastest, slowest}){
+  const lapStyle = [
+    styles.lap,
+    fastest && styles.fastest,
+    slowest && styles.slowest,
+  ]
   return(
-    <View style={styles.lap}>
+    <View style={lapStyle}>
       <Text style={styles.lapText}>Lap {number}</Text>
       <Timer style={styles.lapText} interval={interval}/>
     </View>
